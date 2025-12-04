@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://md8o8cx2y4mj"]
+
+[ext_resource type="Texture2D" uid="uid://p0s747c21jre" path="res://Sprites/zona_mierdosa.png" id="1_ewmn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlw6t"]
+size = Vector2(418, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewmn3"]
+size = Vector2(64, 4)
+
+[node name="Map1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ewmn3")
+
+[node name="Collision_Floor" type="CollisionShape2D" parent="."]
+position = Vector2(30, 56)
+shape = SubResource("RectangleShape2D_mlw6t")
+
+[node name="Collision_Plataform1" type="CollisionShape2D" parent="."]
+position = Vector2(-77, -14)
+shape = SubResource("RectangleShape2D_ewmn3")
+one_way_collision = true
+
+[node name="Collision_Plataform2" type="CollisionShape2D" parent="."]
+position = Vector2(138, -14)
+shape = SubResource("RectangleShape2D_ewmn3")
+one_way_collision = true
