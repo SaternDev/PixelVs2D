@@ -5,7 +5,7 @@ const  SPEED = 180.0
 
 @export var jump_velocity = -300.0
 
-var double_Jump_Used = false
+var air_jumps = 2
 
 
 func _physics_process(delta: float) -> void:
@@ -18,14 +18,14 @@ func _physics_process(delta: float) -> void:
 	
 	#Restart Double Jump
 	if is_on_floor():
-		double_Jump_Used = false
+		air_jumps = 2
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 	#Handle Double Jump
-	elif Input.is_action_just_pressed("Salto") and not is_on_floor() and not double_Jump_Used:
-		double_Jump_Used = true
+	elif Input.is_action_just_pressed("Salto") and not is_on_floor() and air_jumps > 0:
+		air_jumps -= 1
 		velocity.y = jump_velocity
 	
 	#Handle Sprite Flip to turn the player
