@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rslic"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(1.2707069, 1.2707069)
 script = ExtResource("1_rslic")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
