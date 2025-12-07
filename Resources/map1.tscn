@@ -9,6 +9,7 @@ size = Vector2(804, 20)
 size = Vector2(64, 4)
 
 [node name="Map1" type="StaticBody2D"]
+scale = Vector2(0.697211, 0.697211)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.9157206, 1.9157206)
