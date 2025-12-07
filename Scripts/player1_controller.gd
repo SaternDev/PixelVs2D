@@ -44,8 +44,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_velocity
 	
 	#Handle Sprite Flip to turn the player
-	if direction != 0:
-		$Sprite2D.scale.x = direction
+	if direction > 0.1:
+		$Sprite2D.scale.x = 1
+	elif direction < 0.1:
+		$Sprite2D.scale.x = -1
 	
 	# Get the input direction and handle the movement/deceleration.
 	if direction and not inKnockback:
@@ -55,14 +57,13 @@ func _physics_process(delta: float) -> void:
 			
 	move_and_slide()
 
-
+#El Player a Muerto y se le resta una vida
 func player_Death():
 	lifes -= 1
 	print("Player has dead")
 
-
+#Recibe Knockback
 func recibirKnockback(directionRightAttac, cantitiKnockback):
-	#Función para recibir knockback y que te lance hacia atrás
 	inKnockback = true
 	if knockback_waiting.is_stopped():
 		knockback_waiting.start(0.2 + hitCounts*0.01)
@@ -77,6 +78,6 @@ func recibirKnockback(directionRightAttac, cantitiKnockback):
 	hitCounts += 1
 	move_and_slide()
 
-
+#Detecta si el cooldown de no poderse mover del knockback se ha terminado
 func _on_knockback_waiting_timeout() -> void:
 	inKnockback = false
