@@ -1,9 +1,12 @@
-class_name Character
+class_name Player
 extends CharacterBody2D
 
 const  SPEED = 180.0
 
+@onready var knockback_waiting: Timer = $KnockbackWaiting
+
 var LIFES = 3
+var hitCounts = 0
 @export var jump_velocity = -300.0
 @export var respawnLocation:Vector2 = Vector2(510., 550.)
 
@@ -21,10 +24,9 @@ func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_axis("Izquierda", "Derecha")
 	
-	if not inKnockback:
-		# Add the gravity.
-		if not is_on_floor():
-			velocity += get_gravity() * delta
+	# Add the gravity.
+	if not is_on_floor() and not inKnockback:
+		velocity += get_gravity() * delta
 	
 	#Restart Double Jump
 	if is_on_floor():
@@ -45,15 +47,12 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		$Sprite2D.scale.x = direction
 	
-	#No te deja moverte cuando estas reciviendo knockback
-	if not inKnockback:
-		# Get the input direction and handle the movement/deceleration.
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+	# Get the input direction and handle the movement/deceleration.
+	if direction and not inKnockback:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 			
-	
 	move_and_slide()
 
 
@@ -61,6 +60,22 @@ func player_Death():
 	print("Player has dead")
 
 
-func recibirKnockback(cantidadKnockback):
-	#Futura función para recibir knockback y que te lance hacia atrás
-	print("Knockback")
+func recibirKnockback(directionRightAttac, cantitiKnockback):
+	#Función para recibir knockback y que te lance hacia atrás
+	inKnockback = true
+	if knockback_waiting.is_stopped():
+		knockback_waiting.start(0.2 + hitCounts*0.01)
+	else:
+		knockback_waiting.start(0.2 + hitCounts*0.01)
+		
+	if directionRightAttac:
+		velocity.x = -1 * (cantitiKnockback * 100) - hitCounts * 100
+	else:
+		velocity.x = 1 * (cantitiKnockback * 100) + hitCounts * 100
+		
+	hitCounts += 1
+	move_and_slide()
+
+
+func _on_knockback_waiting_timeout() -> void:
+	inKnockback = false

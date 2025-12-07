@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rslic"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D"]
 scale = Vector2(1.2707069, 1.2707069)
 script = ExtResource("1_rslic")
 
@@ -15,3 +15,8 @@ offset = Vector2(-0.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rslic")
+
+[node name="KnockbackWaiting" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="KnockbackWaiting" to="." method="_on_knockback_waiting_timeout"]
