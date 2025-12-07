@@ -61,6 +61,6 @@ func player_Death():
 	print("Player has dead")
 
 
-func recibirKnockback():
+func recibirKnockback(cantidadKnockback):
 	#Futura función para recibir knockback y que te lance hacia atrás
 	print("Knockback")
