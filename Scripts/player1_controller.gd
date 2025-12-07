@@ -5,7 +5,7 @@ const  SPEED = 180.0
 
 @onready var knockback_waiting: Timer = $KnockbackWaiting
 
-var LIFES = 3
+var lifes = 3
 var hitCounts = 0
 @export var jump_velocity = -300.0
 @export var respawnLocation:Vector2 = Vector2(510., 550.)
@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 
 
 func player_Death():
+	lifes -= 1
 	print("Player has dead")
 
 
