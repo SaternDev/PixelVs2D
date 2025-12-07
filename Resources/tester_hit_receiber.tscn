@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44q6cigtixvu"]
+
+[ext_resource type="Texture2D" uid="uid://dv07vvnftllw0" path="res://Sprites/HitRecibeTester.png" id="1_suupi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7anr"]
+size = Vector2(32, 32)
+
+[node name="TesterHitReceiber" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_suupi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b7anr")
