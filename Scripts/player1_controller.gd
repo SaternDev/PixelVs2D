@@ -4,6 +4,7 @@ extends CharacterBody2D
 const  SPEED = 180.0
 
 @onready var knockback_waiting: Timer = $KnockbackWaiting
+const HIT_RECIBE_TESTER = preload("uid://dv07vvnftllw0")
 
 var lifes = 3
 var hitCounts = 0

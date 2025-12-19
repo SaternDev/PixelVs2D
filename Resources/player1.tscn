@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu2iierpxiy1w"]
 
-[ext_resource type="Texture2D" uid="uid://dikswlasykto3" path="res://Sprites/SpriteNave.png" id="1_4wv4v"]
+[ext_resource type="Texture2D" uid="uid://dnpnt3refk3a6" path="res://Sprites/SpriteNave.png" id="1_4wv4v"]
 [ext_resource type="Script" uid="uid://c6wyo2alk8la5" path="res://Scripts/player1_controller.gd" id="1_rslic"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rslic"]

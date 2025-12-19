@@ -10,7 +10,7 @@
 position = Vector2(570, 515)
 
 [node name="Player1" parent="." instance=ExtResource("2_nf5f6")]
-position = Vector2(510.00003, 555)
+position = Vector2(503, 548)
 
 [node name="TestHit_Receiber" parent="." instance=ExtResource("3_f1giu")]
 position = Vector2(870, 531)
