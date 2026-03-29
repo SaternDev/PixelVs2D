@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnpnt3refk3a6"
-path="res://.godot/imported/SpriteNave.png-c1a891908cd894f85f7084c88fb92ec9.ctex"
+uid="uid://dv07vvnftllw0"
+path="res://.godot/imported/HitRecibeTester.png-2d9a6b63c6a784afbe8ba79bab423678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SpriteNave.png"
-dest_files=["res://.godot/imported/SpriteNave.png-c1a891908cd894f85f7084c88fb92ec9.ctex"]
+source_file="res://Sprites/HitRecibeTester.png"
+dest_files=["res://.godot/imported/HitRecibeTester.png-2d9a6b63c6a784afbe8ba79bab423678.ctex"]
 
 [params]
 

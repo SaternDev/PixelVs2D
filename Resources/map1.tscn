@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://p0s747c21jre" path="res://Sprites/zona_mierdosa.png" id="1_ewmn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlw6t"]
-size = Vector2(804, 20)
+size = Vector2(804, 103.19431)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewmn3"]
 size = Vector2(64, 4)
@@ -16,7 +16,7 @@ scale = Vector2(1.9157206, 1.9157206)
 texture = ExtResource("1_ewmn3")
 
 [node name="Collision_Floor" type="CollisionShape2D" parent="."]
-position = Vector2(58, 99)
+position = Vector2(58, 140.59717)
 shape = SubResource("RectangleShape2D_mlw6t")
 
 [node name="Collision_Plataform1" type="CollisionShape2D" parent="."]
